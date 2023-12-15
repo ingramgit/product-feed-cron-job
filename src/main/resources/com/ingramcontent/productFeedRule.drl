@@ -1,4 +1,16 @@
 package com.ingramcontent;
 
 import com.ingramcontent.model.Request;
+import com.ingramcontent.consumer.RestWebServiceConsumer;
+
+rule "Refresh Product Feed"
+    ruleflow-group 'refreshProductFeed'
+	when 
+		request: Request(method=="GET");
+	then
+	    System.out.println("*******Calling refreshProductFeed api*********");
+	    String url = "https://gorest.co.in/public/v2/todos";
+		String response = RestWebServiceConsumer.get(url);
+		request.setResponse(response);
+	end	
 
