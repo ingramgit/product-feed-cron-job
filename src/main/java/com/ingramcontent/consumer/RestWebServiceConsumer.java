@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 public class RestWebServiceConsumer implements java.io.Serializable {
 
     static final long serialVersionUID = 1L;
+    static Logger logger = Logger.getLogger(RestWebServiceConsumer.class.getName());
 
     public RestWebServiceConsumer() {
     }
