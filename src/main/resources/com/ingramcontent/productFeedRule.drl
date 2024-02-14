@@ -47,8 +47,8 @@ rule "Refresh Review Feed"
 		request.setResponse(response);
 	end		
 	
-rule "Refresh Inventory Feed"
-    ruleflow-group 'RefreshInventoryFeed'
+rule "Fetch Feed Status"
+    ruleflow-group 'FetchFeedStatus'
 	when 
 		request: Request(method=="GET");
 	then
