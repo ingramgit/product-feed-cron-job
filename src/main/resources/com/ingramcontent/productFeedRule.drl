@@ -37,8 +37,8 @@ rule "Refresh Inventory Feed"
 	end	
 
 
-rule "Refresh Inventory Feed"
-    ruleflow-group 'RefreshInventoryFeed'
+rule "Refresh Review Feed"
+    ruleflow-group 'RefreshReviewFeed'
 	when 
 		request: Request(method=="GET");
 	then
