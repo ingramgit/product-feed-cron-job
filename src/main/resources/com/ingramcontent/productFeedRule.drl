@@ -3,6 +3,17 @@ package com.ingramcontent;
 import com.ingramcontent.model.Request;
 import com.ingramcontent.consumer.RestWebServiceConsumer;
 
+rule "Update Product Inventory"
+    ruleflow-group 'UpdateProductInventory'
+	when 
+		request: Request(method=="GET");
+	then
+	    String url = "https://gorest.co.in/public/v2/todos";
+		String response = RestWebServiceConsumer.get(url);
+		request.setResponse(response);
+	end	
+
+
 rule "Refresh Product Feed"
     ruleflow-group 'RefreshProductFeed'
 	when 
@@ -15,8 +26,8 @@ rule "Refresh Product Feed"
 
 
 
-rule "Get Product Feed Status"
-    ruleflow-group 'GetProductFeedStatus'
+rule "Refresh Inventory Feed"
+    ruleflow-group 'RefreshInventoryFeed'
 	when 
 		request: Request(method=="GET");
 	then
@@ -35,3 +46,13 @@ rule "Refresh Inventory Feed"
 		String response = RestWebServiceConsumer.get(url);
 		request.setResponse(response);
 	end		
+	
+rule "Refresh Inventory Feed"
+    ruleflow-group 'RefreshInventoryFeed'
+	when 
+		request: Request(method=="GET");
+	then
+	    String url = "https://gorest.co.in/public/v2/todos";
+		String response = RestWebServiceConsumer.get(url);
+		request.setResponse(response);
+	end	
