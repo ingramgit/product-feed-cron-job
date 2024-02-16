@@ -8,7 +8,7 @@ rule "Update Product Inventory"
 	when 
 		request: Request(method=="GET");
 	then
-	    String url = "https://gorest.co.in/public/v2/todos";
+	    String url = "https://ingramcontent.com/api/v1/productCatalog/updateProductInventory";
 		String response = RestWebServiceConsumer.get(url);
 		request.setResponse(response);
 	end	
