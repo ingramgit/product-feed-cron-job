@@ -19,7 +19,7 @@ rule "Refresh Product Feed"
 	when 
 		request: Request(method=="GET");
 	then
-	    String url = "https://gorest.co.in/public/v2/todos";
+	    String url = "https://ingramcontent.com/api/v1/product/refreshProductFeed";
 		String response = RestWebServiceConsumer.get(url);
 		request.setResponse(response);
 	end	
@@ -31,7 +31,7 @@ rule "Refresh Inventory Feed"
 	when 
 		request: Request(method=="GET");
 	then
-	    String url = "https://gorest.co.in/public/v2/todos";
+	    String url = "https://ingramcontent.com/api/v1/product/refreshInventoryFeed";
 		String response = RestWebServiceConsumer.get(url);
 		request.setResponse(response);
 	end	
