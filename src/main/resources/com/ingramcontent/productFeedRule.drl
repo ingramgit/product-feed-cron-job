@@ -3,14 +3,14 @@ package com.ingramcontent;
 import com.ingramcontent.model.Request;
 import com.ingramcontent.consumer.RestWebServiceConsumer;
 
-String url = "https://ingramcontent.com/api/v1/productCatalog/updateProductInventory";
+
 
 rule "Update Product Inventory"
     ruleflow-group 'UpdateProductInventory'
 	when 
 		request: Request(method=="GET");
 	then
-	    
+	    String url = "https://ingramcontent.com/api/v1/productCatalog/updateProductInventory";
 		String response = RestWebServiceConsumer.get(url);
 		request.setResponse(response);
 	end	
