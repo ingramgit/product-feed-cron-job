@@ -42,7 +42,7 @@ rule "Refresh Review Feed"
 	when 
 		request: Request(method=="GET");
 	then
-	    String url = "https://gorest.co.in/public/v2/todos";
+	    String url = "https://ingramcontent.com/api/v1/product/refreshReviewFeed";
 		String response = RestWebServiceConsumer.get(url);
 		request.setResponse(response);
 	end		
